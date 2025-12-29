@@ -1,0 +1,10 @@
+[project]
+name = "ai_assistant"
+version = "0.0.1"
+description = "AI Assistant for Frappe/ERPNext"
+requires-python = ">=3.10"
+readme = "README_EMBED_V2.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ai_assistant*"]

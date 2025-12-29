@@ -1,0 +1,1 @@
+ai_assistant.patches.bootinfo_patch

@@ -1,0 +1,125 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-01 12:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "provider",
+  "api_key",
+  "api_base_url",
+  "default_model",
+  "extra_headers",
+  "is_active",
+  "observability_section",
+  "enable_langfuse",
+  "langfuse_public_key",
+  "langfuse_secret_key",
+  "langfuse_host"
+ ],
+ "fields": [
+  {
+   "fieldname": "provider",
+   "fieldtype": "Data",
+   "label": "Provider Name",
+   "reqd": 1,
+   "description": "AI provider name (e.g., OpenAI, Anthropic, Azure OpenAI, etc.)"
+  },
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Password",
+   "label": "API Key",
+   "reqd": 1
+  },
+  {
+   "fieldname": "api_base_url",
+   "fieldtype": "Data",
+   "label": "API Base URL",
+   "reqd": 1,
+   "description": "Full API endpoint URL (e.g., https://api.openai.com/v1, https://api.anthropic.com/v1)"
+  },
+  {
+   "fieldname": "default_model",
+   "fieldtype": "Data",
+   "label": "Default Model",
+   "reqd": 1,
+   "description": "Default model to use (e.g., gpt-4o-mini, claude-3-sonnet-20240229)"
+  },
+  {
+   "fieldname": "extra_headers",
+   "fieldtype": "Small Text",
+   "label": "Extra Headers (JSON)"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "observability_section",
+   "fieldtype": "Section Break",
+   "label": "Observability Settings"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_langfuse",
+   "fieldtype": "Check",
+   "label": "Enable Langfuse Observability",
+   "description": "Enable LLM observability and tracing with Langfuse"
+  },
+  {
+   "fieldname": "langfuse_public_key",
+   "fieldtype": "Data",
+   "label": "Langfuse Public Key",
+   "depends_on": "eval:doc.enable_langfuse"
+  },
+  {
+   "fieldname": "langfuse_secret_key",
+   "fieldtype": "Password",
+   "label": "Langfuse Secret Key",
+   "depends_on": "eval:doc.enable_langfuse"
+  },
+  {
+   "fieldname": "langfuse_host",
+   "fieldtype": "Data",
+   "label": "Langfuse Host",
+   "default": "https://cloud.langfuse.com",
+   "depends_on": "eval:doc.enable_langfuse",
+   "description": "Langfuse API host URL (default: https://cloud.langfuse.com)"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-01-01 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "AI Assistant",
+ "name": "AI Provider",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "AI Assistant Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
