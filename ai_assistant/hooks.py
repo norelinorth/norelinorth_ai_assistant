@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-app_name = "ai_assistant"
+app_name = "erpnext_ai_assistant"
 app_title = "AI Assistant"
 app_publisher = "Noreli North"
 app_description = "Embedded AI Assistant inside ERPNext DocTypes with Langfuse observability."

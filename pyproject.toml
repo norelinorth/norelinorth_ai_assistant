@@ -1,5 +1,5 @@
 [project]
-name = "ai_assistant"
+name = "erpnext_ai_assistant"
 version = "2.2.0"
 description = "Embedded AI Assistant inside ERPNext DocTypes with Langfuse observability"
 authors = [
