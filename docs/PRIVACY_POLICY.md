@@ -3,7 +3,7 @@
 **Last Updated**: December 29, 2025
 
 **Publisher**: Noreli North
-**Contact**: honeyspotdaily@gmail.com
+**Contact**: [GitHub Issues](https://github.com/norelinorth/norelinorth_ai_assistant/issues)
 
 ---
 
@@ -128,8 +128,7 @@ We may update this Privacy Policy. Changes will be posted with an updated "Last 
 
 For privacy questions or concerns:
 
-- **Email**: honeyspotdaily@gmail.com
-- **GitHub**: https://github.com/norelinorth/norelinorth_ai_assistant/issues
+- **GitHub Issues**: https://github.com/norelinorth/norelinorth_ai_assistant/issues
 
 ---
 
