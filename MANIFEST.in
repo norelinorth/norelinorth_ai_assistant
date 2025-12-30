@@ -2,37 +2,18 @@ include MANIFEST.in
 include README.md
 include LICENSE
 include CHANGELOG.md
-include CONTRIBUTING.md
-include PACKAGE_CONTENTS.md
 include requirements.txt
 include pyproject.toml
 
-# User documentation
-include INSTALLATION.md
-include LANGFUSE_OBSERVABILITY.md
-include LANGFUSE_QUICKSTART.md
-include LANGFUSE_FILTERING.md
-include IMPLEMENTATION_SUMMARY.md
+# Include app module
+recursive-include norelinorth_ai_assistant *.py
+recursive-include norelinorth_ai_assistant *.json
+recursive-include norelinorth_ai_assistant *.js
+recursive-include norelinorth_ai_assistant *.html
+recursive-include norelinorth_ai_assistant *.css
+recursive-include norelinorth_ai_assistant *.txt
 
-# Include app files
-recursive-include ai_assistant *.py
-recursive-include ai_assistant *.json
-recursive-include ai_assistant *.js
-recursive-include ai_assistant *.html
-recursive-include ai_assistant *.css
-recursive-include ai_assistant *.txt
-
-# Exclude development files
-recursive-exclude ai_assistant *.pyc
-recursive-exclude ai_assistant __pycache__
-exclude *.sh
-recursive-exclude ai_assistant *.sh
-exclude ERRORS_AND_FIXES.md
-exclude FIXES_APPLIED.md
-exclude LANGFUSE_FIX.md
-exclude MARKETPLACE_COMPLIANCE_REPORT.md
-exclude STANDARDS_COMPLIANCE_FIXES.md
-exclude STANDARDS_VERIFICATION.md
-exclude RELEASE_NOTES_v2.1.1.md
-exclude INSTALLATION_COMPLIANCE.md
-exclude TEST_SUITE_COMPLETION.md
+# Exclude cache
+recursive-exclude norelinorth_ai_assistant *.pyc
+recursive-exclude norelinorth_ai_assistant __pycache__
+recursive-exclude * .DS_Store

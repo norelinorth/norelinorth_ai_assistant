@@ -5,7 +5,7 @@ with open("requirements.txt") as f:
 
 setup(
     name="norelinorth_ai_assistant",
-    version="2.2.1",
+    version="2.3.0",
     description="Embedded AI Assistant inside ERPNext DocTypes with Langfuse observability",
     author="Noreli North",
     url="https://github.com/norelinorth/norelinorth_ai_assistant",

@@ -278,8 +278,7 @@ bench get-app ai_assistant --version 2.1.1
 
 ### User Support
 - **Issues**: [GitHub Issues](https://github.com/norelinorth/norelinorth_ai_assistant/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/norelinorth/norelinorth_ai_assistant/discussions)
-- **Marketplace:** Frappe Marketplace support
+- **Marketplace**: Frappe Marketplace
 
 ### Updating the App
 

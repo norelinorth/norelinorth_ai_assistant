@@ -2,21 +2,17 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
-      - develop
+    branches: [main]
   pull_request:
 
 concurrency:
-  group: ci-norelinorth_ai_assistant-${{ github.event.number || github.ref }}
+  group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   tests:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    name: Server Tests
+    name: Tests
 
     services:
       redis-cache:
@@ -36,13 +32,8 @@ jobs:
         options: --health-cmd="mariadb-admin ping" --health-interval=5s --health-timeout=2s --health-retries=3
 
     steps:
-      - name: Clone
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Find tests
-        run: |
-          echo "Finding tests"
-          grep -rn "def test" --include="*.py" . > /dev/null
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -53,36 +44,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          check-latest: true
 
       - name: Cache pip
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/*requirements.txt', '**/pyproject.toml', '**/setup.py') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-            ${{ runner.os }}-
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: 'echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT'
-
-      - name: Cache yarn
-        uses: actions/cache@v4
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
 
       - name: Install MariaDB Client
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y mariadb-client
+        run: sudo apt-get update && sudo apt-get install -y mariadb-client
 
-      - name: Setup Frappe Bench
+      - name: Setup Bench
         run: |
           pip install frappe-bench
           bench init --skip-redis-config-generation --skip-assets --frappe-branch version-15 --python "$(which python)" ~/frappe-bench
@@ -95,13 +67,9 @@ jobs:
         working-directory: /home/runner/frappe-bench
         run: |
           bench get-app erpnext --branch version-15
-          # Clone app and install with pip --no-deps to avoid uv dependency issues
           git clone $GITHUB_WORKSPACE apps/norelinorth_ai_assistant
           ./env/bin/pip install -e apps/norelinorth_ai_assistant --no-deps
-          # Install langfuse separately (required for tests, skipped by --no-deps)
           ./env/bin/pip install langfuse>=2.0.0
-          # Add app to apps.txt (bench get-app does this, but we skipped it)
-          # Use printf with \n to ensure proper newline handling
           printf "\nnorelinorth_ai_assistant\n" >> sites/apps.txt
           bench setup requirements --dev
           bench new-site --db-root-password root --admin-password admin test_site
@@ -116,5 +84,3 @@ jobs:
         run: |
           bench --site test_site set-config allow_tests true
           bench --site test_site run-tests --app norelinorth_ai_assistant
-        env:
-          TYPE: server

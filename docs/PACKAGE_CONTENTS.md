@@ -1,6 +1,6 @@
 # AI Assistant - Package Contents
 
-**Version:** 2.2.13
+**Version:** 2.3.0
 **Author:** Noreli North
 **License:** MIT
 **Repository:** https://github.com/norelinorth/norelinorth_ai_assistant
@@ -114,9 +114,8 @@ bench --site yoursite.local install-app norelinorth_ai_assistant
 
 ## Support
 
-- **Documentation**: See README.md and INSTALLATION.md
+- **Documentation**: README.md and INSTALLATION.md
 - **Issues**: [GitHub Issues](https://github.com/norelinorth/norelinorth_ai_assistant/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/norelinorth/norelinorth_ai_assistant/discussions)
 
 ---
 

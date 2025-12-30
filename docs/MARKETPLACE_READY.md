@@ -1,7 +1,7 @@
 # AI Assistant - Marketplace Readiness Report
 
 **App Name:** AI Assistant
-**Version:** 2.2.13
+**Version:** 2.3.0
 **Author:** Noreli North
 **License:** MIT
 **Repository:** https://github.com/norelinorth/norelinorth_ai_assistant

@@ -97,12 +97,8 @@ norelinorth_ai_assistant/
 
 ## Support
 
-- Issues: [GitHub Issues](https://github.com/norelinorth/norelinorth_ai_assistant/issues)
-- Documentation: [GitHub Repository](https://github.com/norelinorth/norelinorth_ai_assistant)
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+- **Issues**: [GitHub Issues](https://github.com/norelinorth/norelinorth_ai_assistant/issues)
+- **Repository**: [GitHub](https://github.com/norelinorth/norelinorth_ai_assistant)
 
 ## License
 
