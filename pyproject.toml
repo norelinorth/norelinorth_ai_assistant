@@ -1,6 +1,6 @@
 [project]
 name = "norelinorth_ai_assistant"
-version = "2.2.8"
+version = "2.2.9"
 description = "Embedded AI Assistant inside ERPNext DocTypes with Langfuse observability"
 authors = [
     {name = "Noreli North", email = "honeyspotdaily@gmail.com"}

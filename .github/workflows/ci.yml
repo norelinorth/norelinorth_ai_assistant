@@ -99,7 +99,8 @@ jobs:
           git clone $GITHUB_WORKSPACE apps/norelinorth_ai_assistant
           ./env/bin/pip install -e apps/norelinorth_ai_assistant --no-deps
           # Add app to apps.txt (bench get-app does this, but we skipped it)
-          echo "norelinorth_ai_assistant" >> sites/apps.txt
+          # Use printf with \n to ensure proper newline handling
+          printf "\nnorelinorth_ai_assistant\n" >> sites/apps.txt
           bench setup requirements --dev
           bench new-site --db-root-password root --admin-password admin test_site
           bench --site test_site install-app erpnext

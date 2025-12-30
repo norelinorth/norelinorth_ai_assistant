@@ -2,6 +2,16 @@
 
 All notable changes to the AI Assistant app will be documented in this file.
 
+## [2.2.9] - 2025-12-30
+
+### Fixed
+- **GitHub Actions CI** - Fix apps.txt newline issue
+  - Changed `echo` to `printf "\nnorelinorth_ai_assistant\n"`
+  - apps.txt had no trailing newline, causing names to concatenate
+  - Fixes "No module named erpnextnorelinorth_ai_assistant" error
+
+---
+
 ## [2.2.8] - 2025-12-30
 
 ### Fixed

@@ -6,7 +6,7 @@ app_publisher = "Noreli North"
 app_description = "Embedded AI Assistant inside ERPNext DocTypes with Langfuse observability."
 app_email = "honeyspotdaily@gmail.com"
 app_license = "MIT"
-app_version = "2.2.8"
+app_version = "2.2.9"
 
 required_apps = ["frappe"]
 
