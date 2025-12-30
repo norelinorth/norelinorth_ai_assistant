@@ -2,6 +2,15 @@
 
 All notable changes to the AI Assistant app will be documented in this file.
 
+## [2.2.5] - 2025-12-30
+
+### Fixed
+- **GitHub Actions CI** - Use Frappe version-15 branch
+  - Added `--frappe-branch version-15` to bench init
+  - Fixes "Python>=3.14 required" error from Frappe develop branch
+
+---
+
 ## [2.2.4] - 2025-12-30
 
 ### Fixed
