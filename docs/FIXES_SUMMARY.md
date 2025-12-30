@@ -19,7 +19,7 @@ All fixes have been applied to prepare the AI Assistant app for Frappe Marketpla
 **Change:**
 ```diff
 - authors = [{name = "You", email = "you@example.com"}]
-+ authors = [{name = "Noreli North", email = "contact@noreli-north.com"}]
++ authors = [{name = "Noreli North"}]
 ```
 
 **Impact:** Marketplace will now show correct author information
@@ -320,11 +320,9 @@ bench --site test-ai-assistant.local run-tests --app ai_assistant
 ## Support & Maintenance
 
 **Author:** Noreli North
-**Email:** contact@noreli-north.com
 **License:** MIT
-
-**Repository:** https://github.com/noreli-north/ai_assistant (if applicable)
-**Issues:** Report via marketplace or GitHub
+**Repository:** https://github.com/norelinorth/norelinorth_ai_assistant
+**Issues:** [GitHub Issues](https://github.com/norelinorth/norelinorth_ai_assistant/issues)
 
 ---
 

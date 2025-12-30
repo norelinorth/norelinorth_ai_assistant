@@ -4,9 +4,11 @@ app_name = "norelinorth_ai_assistant"
 app_title = "Noreli North AI Assistant"
 app_publisher = "Noreli North"
 app_description = "Embedded AI Assistant inside ERPNext DocTypes with Langfuse observability."
-app_email = "norelinorth@users.noreply.github.com"
+app_icon = "octicon octicon-hubot"
+app_color = "#4F46E5"
 app_license = "MIT"
-app_version = "2.2.12"
+app_version = "2.2.13"
+app_home = "https://github.com/norelinorth/norelinorth_ai_assistant"
 
 required_apps = ["frappe"]
 

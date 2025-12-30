@@ -1,11 +1,11 @@
 # AI Assistant - Marketplace Readiness Report
 
 **App Name:** AI Assistant
-**Version:** 2.1.1
+**Version:** 2.2.13
 **Author:** Noreli North
-**Email:** contact@noreli-north.com
 **License:** MIT
-**Date:** 2025-10-26
+**Repository:** https://github.com/norelinorth/norelinorth_ai_assistant
+**Date:** 2025-12-30
 
 ---
 
@@ -30,7 +30,7 @@
 - **setup.py:** Noreli North ✓
 - **hooks.py:** Noreli North ✓
 - **pyproject.toml:** Noreli North ✓
-- **Email:** contact@noreli-north.com ✓
+- **GitHub:** https://github.com/norelinorth/norelinorth_ai_assistant ✓
 
 ### 3. Version Consistency ✅
 - **Status:** PASS

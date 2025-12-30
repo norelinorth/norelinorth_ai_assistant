@@ -170,7 +170,7 @@ bench --site test-ai.local run-tests --app ai_assistant
 3. **Documentation Links**
    - GitHub repository URL
    - Documentation URL (link to README.md)
-   - Support email: contact@noreli-north.com
+   - Support: GitHub Issues
 
 4. **Submit for Review**
    - Frappe team will review (typically 3-7 days)
@@ -268,7 +268,7 @@ bench get-app ai_assistant --version 2.1.1
 - [ ] GitHub release published
 - [ ] Marketplace submission completed
 - [ ] Documentation links verified
-- [ ] Support email active
+- [ ] GitHub Issues enabled
 - [ ] CHANGELOG.md updated
 - [ ] Version bumped (if needed)
 
@@ -277,9 +277,9 @@ bench get-app ai_assistant --version 2.1.1
 ## Support & Maintenance
 
 ### User Support
-- **Email:** contact@noreli-north.com
+- **Issues**: [GitHub Issues](https://github.com/norelinorth/norelinorth_ai_assistant/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/norelinorth/norelinorth_ai_assistant/discussions)
 - **Marketplace:** Frappe Marketplace support
-- **GitHub Issues:** (if repository is public)
 
 ### Updating the App
 
@@ -356,7 +356,7 @@ Recommended screenshots:
 
 **The AI Assistant app is ready for marketplace submission!**
 
-For questions or issues, contact: contact@noreli-north.com
+For questions or issues: [GitHub Issues](https://github.com/norelinorth/norelinorth_ai_assistant/issues)
 
 ---
 

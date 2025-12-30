@@ -1,9 +1,9 @@
 [project]
 name = "norelinorth_ai_assistant"
-version = "2.2.12"
+version = "2.2.13"
 description = "Embedded AI Assistant inside ERPNext DocTypes with Langfuse observability"
 authors = [
-    {name = "Noreli North", email = "norelinorth@users.noreply.github.com"}
+    {name = "Noreli North"}
 ]
 dependencies = [
     "frappe>=15.0.0",
