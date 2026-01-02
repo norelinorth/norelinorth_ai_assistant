@@ -11,13 +11,15 @@ from frappe import _
 from frappe.utils.password import get_decrypted_password
 
 # Graceful degradation: langfuse is optional
+# Catch all exceptions - langfuse may fail on Python 3.14+ due to pydantic issues
 try:
 	from langfuse import Langfuse
 	LANGFUSE_AVAILABLE = True
-except ImportError:
+except Exception:
 	LANGFUSE_AVAILABLE = False
+	Langfuse = None  # type: ignore
 	# Don't log error at import time - Langfuse is optional
-	# Only notify user if they try to use it when it's not installed
+	# May fail due to: ImportError (not installed) or pydantic issues (Python 3.14+)
 
 
 _langfuse_client = None
