@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, version-16]
   pull_request:
 
 concurrency:
@@ -12,7 +12,18 @@ concurrency:
 jobs:
   tests:
     runs-on: ubuntu-latest
-    name: Tests
+    name: Tests (Frappe ${{ matrix.frappe-version }})
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - frappe-version: version-15
+            python-version: '3.12'
+            node-version: 18
+          - frappe-version: version-16
+            python-version: '3.13'
+            node-version: 20
 
     services:
       redis-cache:
@@ -38,18 +49,18 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: ${{ matrix.python-version }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: ${{ matrix.node-version }}
 
       - name: Cache pip
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
+          key: ${{ runner.os }}-pip-${{ matrix.frappe-version }}-${{ hashFiles('**/pyproject.toml') }}
 
       - name: Install MariaDB Client
         run: sudo apt-get update && sudo apt-get install -y mariadb-client
@@ -57,7 +68,7 @@ jobs:
       - name: Setup Bench
         run: |
           pip install frappe-bench
-          bench init --skip-redis-config-generation --skip-assets --frappe-branch version-15 --python "$(which python)" ~/frappe-bench
+          bench init --skip-redis-config-generation --skip-assets --frappe-branch ${{ matrix.frappe-version }} --python "$(which python)" ~/frappe-bench
           mariadb --host 127.0.0.1 --port 3306 -u root -proot -e "SET GLOBAL character_set_server = 'utf8mb4'"
           mariadb --host 127.0.0.1 --port 3306 -u root -proot -e "SET GLOBAL collation_server = 'utf8mb4_unicode_ci'"
         env:
@@ -66,7 +77,7 @@ jobs:
       - name: Install Apps
         working-directory: /home/runner/frappe-bench
         run: |
-          bench get-app erpnext --branch version-15
+          bench get-app erpnext --branch ${{ matrix.frappe-version }}
           git clone $GITHUB_WORKSPACE apps/norelinorth_ai_assistant
           ./env/bin/pip install -e apps/norelinorth_ai_assistant --no-deps
           ./env/bin/pip install langfuse>=2.0.0
