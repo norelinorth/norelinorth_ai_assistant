@@ -8,8 +8,8 @@ AI Assistant provides context-aware AI chat capabilities directly within your ER
 
 ## Requirements
 
-- Frappe Framework v15.0.0 or higher
-- ERPNext v15.0.0 or higher (optional, for DocType integration)
+- Frappe Framework v15.0.0 or v16.0.0
+- ERPNext v15.0.0 or v16.0.0 (optional, for DocType integration)
 - Python 3.10 or higher
 
 ## Features

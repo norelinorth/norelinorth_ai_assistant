@@ -2,6 +2,16 @@
 
 All notable changes to AI Assistant will be documented in this file.
 
+## [2.4.3] - 2026-01-13
+
+### Changed
+- Modernized packaging structure using `pyproject.toml` exclusively
+- Removed deprecated `setup.py` and `requirements.txt`
+- Aligns with Python PEP 518/621 standards and Frappe marketplace requirements
+- Updated documentation to explicitly mention Frappe/ERPNext v16 support
+
+---
+
 ## [2.4.0] - 2026-01-02
 
 ### Added
